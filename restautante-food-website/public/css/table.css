@@ -1,0 +1,57 @@
+.table-list {
+    width: 100%;
+    max-width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-list th, 
+.table-list td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-list th {
+    background: #ff9800;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table-list tbody tr:hover {
+    background: #f1f1f1;
+    transition: 0.3s;
+}
+
+.table-list .available {
+    color: green;
+    font-weight: bold;
+}
+
+.table-list .booked {
+    color: red;
+    font-weight: bold;
+}
+
+.table-list input[type="radio"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.table-list td:last-child {
+    font-size: 20px;
+}
+.table-list th:nth-child(4),
+.table-list td:nth-child(4) {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.table-list .booked-time {
+    color: #ff5722;
+}

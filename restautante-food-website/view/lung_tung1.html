@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="/public/css/style_cu.css">
+
+    <link href="http://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <section id='menu'>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+                        .then(response => response.text()) // Lấy nội dung dưới dạng text
+                        .then(data => {
+                            document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+                        })
+                        .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+                });
+            </script>
+
+        </section>
+
+        <section class="top">
+            <div class="container">
+                <div class="row justify-content">
+                    <div class="logo"> <img src="image/logo.jpg" alt=""></div>
+                    <div class="menu-bar">
+                        <span></span>
+
+                    </div>
+                    <div class="menu-items">
+                        <ul>
+                            <li class="menu-item"><a href="">Trang chu</a></li>
+                            <li class="menu-item"><a href="">Ve chung toi</a></li>
+                            <li class="menu-item"><a href="">Thuc don</a></li>
+                            <li class="menu-item"><a href="">Phan hoi</a></li>
+                            <li class="menu-item"><a href="">Nhan su</a></li>
+                            <li class="menu-item"><a href="">Lien he</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section-pading">
+
+            <div class="container">
+                <div class="row">
+                    <div class="section-title" data-aos-duration="1500">
+                        <h2 data-title="Câu chuyện">Ve chung toi</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="about-item" data-aos-duration="1500">
+                        <h2>Chao mung cac ban den voi chung toi</h2>
+                        <p>Hành khách đi tàu tăng kỷ lục
+                            Năm 2024, Tổng công ty Đường sắt Việt Nam (VNR) đón hơn 7 triệu lượt hành khách, tăng gần
+                            một
+                            triệu so với năm 2023, cao nhất từ trước đến nay.
+
+                            Diện mạo đô thị dọc metro Bến Thành - Suối Tiên thay đổi sau 10 năm
+                            So với ảnh từ 2015 đến nay, nhiều cao ốc, hạ tầng được xây dựng khang trang, hiện đại dọc
+                            theo
+                            tuyến metro đầu tiên của TP HCM.
+
+                        </p>
+                        <button class="btn">
+                            XEM MENU
+                        </button>
+                    </div>
+                    <div class="about-item">
+
+                        <div class="about-item-img">
+                            <span>Hon 10 nam kinh nghiem</span>
+                            <img src="image/about.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu section-pading">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2 data-title="Dat ngay">Thuc don</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="menu-title">
+                        <button class="menu-button active" data-title="#trua">Trua </button>
+                        <button class="menu-button" data-title="#chieu">Chieu </button>
+                        <button class="menu-button" data-title="#do-uong">Do uong </button>
+                        <button class="menu-button" data-title="#diem-tam">DIem tam</button>
+                    </div>
+                </div>
+                <div class="row justify-content">
+                    <div class="menu-item-content active" id="trua">
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon trua</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-content" id="chieu">
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>mon chieu</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-content" id="do-uong">
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>Do uong</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-content" id="diem-tam">
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                        <div class="food-items">
+                            <div class="food-item">
+                                <img src="image/about.jpg" alt="">
+                                <p>diem tam</p>
+                            </div>
+                            <div class="food-price">
+                                <p>150.000 VND</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+        <section class="phan-hoi section-pading">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2 data-title="y kien">Phan hoi</h2>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="phan-hoi-items">
+                        <div class="phan-hoi-item">
+                            <div class="phan-hoi-item-content">
+                                <div class="phan-hoi-item-img-content-text">
+                                    <h2> Ngo sy nguyen</h2>
+                                    <span>food Specialist</span>
+                                </div>
+                                <div class="phan-hoi-item-img-content-img">
+                                    <img src="image/1.png" alt="">
+                                </div>
+                            </div>
+                            <p>Hành khách đi tàu tăng kỷ lục
+                                Năm 2024, Tổng công ty Đường sắt Việt Nam (VNR) đón hơn 7 triệu lượt hành khách, tăng
+                                gần
+                            </p>
+                            <div class="phan-hoi-item-star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="phan-hoi-item">
+                            <div class="phan-hoi-item-content">
+                                <div class="phan-hoi-item-img-content-text">
+                                    <h2> Ngo sy nguyen</h2>
+                                    <span>food Specialist</span>
+                                </div>
+                                <div class="phan-hoi-item-img-content-img">
+                                    <img src="image/1.png" alt="">
+                                </div>
+                            </div>
+                            <p>Hành khách đi tàu tăng kỷ lục</p>
+                            <div class="phan-hoi-item-star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="phan-hoi-item">
+                            <div class="phan-hoi-item-content">
+                                <div class="phan-hoi-item-img-content-text">
+                                    <h2> Ngo sy nguyen</h2>
+                                    <span>food Specialist</span>
+                                </div>
+                                <div class="phan-hoi-item-img-content-img">
+                                    <img src="image/1.png" alt="">
+                                </div>
+                            </div>
+                            <p>Hành khách đi tàu tăng kỷ lục
+                            </p>
+                            <div class="phan-hoi-item-star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="team">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2 data-title="Cong su">Dau bep</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="team-items">
+                        <img src="image/1.png" alt="">
+                        <div class="team-items-text">
+                            <h2>Ngo sy nguyen</h2>
+                            <span>Bep truong</span>
+                        </div>
+                    </div>
+                    <div class="team-items">
+                        <img src="image/1.png" alt="">
+                        <div class="team-items-text">
+                            <h2>Ngo sy nguyen</h2>
+                            <span>Bep truong</span>
+                        </div>
+                    </div>
+                    <div class="team-items">
+                        <img src="image/1.png" alt="">
+                        <div class="team-items-text">
+                            <h2>Ngo sy nguyen</h2>
+                            <span>Bep truong</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+
+            <div class="footer-bg">
+
+            </div>
+            <div class="container">
+                <div class="row justify-content">
+                    <div class="footer-item">
+                        <h2> dia chi</h2>
+                        <p>72, ham nghi tien<br>than giám, dà nag</p>
+                    </div>
+                    <div class="footer-item">
+                        <h2>gio mua cua</h2>
+                        <p>9h -23h<br>all day</p>
+                    </div>
+                    <div class="footer-item">
+                        <h2>lien he</h2>
+                        <p>Phone : 0000000<br>gmail :000</p>
+                        <div class="footer-social">
+                            <i class="fab fa-facebook"> </i>
+                            <i class="fab fa-instagram"> </i>
+                            <i class="fab fa-twitter"> </i>
+                            <i class="fab fa-youtube"> </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="footer-copyright">
+                    toan bo ban quyen thuoc thai
+                </div>
+            </div>
+        </section>
+
+        <!-- Thêm mã JavaScript vào cuối file -->
+        <script src="script.js"></script> <!-- Link tới file JavaScript -->
+        <script>
+            AOS.inti();
+        </script>
+</body>
+</div>
+
+</html>

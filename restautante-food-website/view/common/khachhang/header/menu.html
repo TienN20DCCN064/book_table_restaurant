@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>about us</title>
+
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<style>
+   /* Giữ thanh menu cố định khi cuộn */
+   .header {
+      position: fixed;
+      /* Giữ cố định */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 20px;
+   }
+
+   /* Tạo khoảng trống bên dưới header để tránh che nội dung */
+   body {
+      padding-top: 0px;
+      /* Điều chỉnh tùy theo chiều cao của header */
+   }
+
+   /* Hiệu ứng mượt khi thay đổi màu nền */
+   .header {
+      transition: background 0.3s ease-in-out;
+   }
+</style>
+
+<body>
+
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="home.html" class="logo">Booking 😋</a>
+
+         <nav class="navbar">
+            <a href="/view/menu_main/home.html">Home</a>
+            <a href="/view/menu_main/about.html">About</a>
+            <a href=/view/menu_main/menu.html>Nhà Hàng</a>
+            <!-- <a href="/view/menu_main/orders.html">Đặt Bàn</a>
+            <a href="/view/menu_main/contact.html">contact</a> -->
+         </nav>
+
+         <div class="icons">
+            <a href="/view/menu_button/search.html"><i class="fas fa-search"></i></a>
+            <a href="/view/menu_button/cart.html"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+         </div>
+
+         <div class="profile">
+            <p class="name">shaikh anas</p>
+            <div class="flex">
+               <a href="/view/menu_button/profile.html" class="btn">profile</a>
+               <a href="#" class="delete-btn">logout</a>
+            </div>
+            <p class="account"><a href="/view/login.html">login</a> or <a href="/vieww/register.html">register</a></p>
+         </div>
+
+      </section>
+
+   </header>
+   <!-- <script>
+      let navbar = document.querySelector('.header .flex .navbar');
+      let profile = document.querySelector('.header .flex .profile');
+   
+      document.querySelector('#menu-btn').onclick = () =>{
+         navbar.classList.toggle('active');
+         profile.classList.remove('active');
+      }
+   
+      document.querySelector('#user-btn').onclick = () =>{
+         profile.classList.toggle('active');
+         navbar.classList.remove('active');
+      }
+   
+      window.onscroll = () =>{
+         profile.classList.remove('active');
+         navbar.classList.remove('active');
+      }
+   
+      function loader(){
+         document.querySelector('.loader').style.display = 'none';
+      }
+   
+      function fadeOut(){
+         setInterval(loader, 2000);
+      }
+   
+      window.onload = fadeOut;
+   </script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Bàn</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/table.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">yum-yum 😋</a>
+            <nav class="navbar">
+                <a href="/view/menu_main/home.html">home</a>
+                <a href="/view/menu_main/about.html">about</a>
+                <a href="/view/menu_main/menu.html">menu</a>
+                <a href="/view/menu_main/orders.html">orders</a>
+                <a href="/view/menu_main/contact.html">contact</a>
+            </nav>
+
+            <div class="icons">
+                <a href="/view/menu_button/search.html"><i class="fas fa-search"></i></a>
+                <a href="/view/menu_button/cart.html"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+
+            <div class="profile">
+                <p class="name">shaikh anas</p>
+                <div class="flex">
+                    <a href="/view/menu_button/profile.html" class="btn">profile</a>
+                    <a href="#" class="delete-btn">logout</a>
+                </div>
+                <p class="account"><a href="/view/login.html">login</a> or <a href="/view/register.html">register</a>
+                </p>
+            </div>
+        </section>
+    </header>
+
+    <section >
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Bàn</th>
+                    <th>Số chỗ</th>
+                    <th>Trạng thái</th>
+                    <th>Đã đặt trước (phút)</th>
+                    <th>Chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>2</td>
+                    <td class="available">✅ Còn trống</td>
+                    <td>-</td>
+                    <td><input type="checkbox" name="selected_tables[]" value="1"></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>4</td>
+                    <td class="booked">❌ Đã đặt</td>
+                    <td class="booked-time" data-booked-time="10">10 phút trước</td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>6</td>
+                    <td class="available">✅ Còn trống</td>
+                    <td>-</td>
+                    <td><input type="checkbox" name="selected_tables[]" value="3"></td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>8</td>
+                    <td class="available">✅ Còn trống</td>
+                    <td>-</td>
+                    <td><input type="checkbox" name="selected_tables[]" value="4"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="selected-tables.html" class="btn" id="view-selected-tables">Xem bàn đã chọn</a>
+        </div>
+        
+        
+    </section>
+    
+    
+
+    <footer class="footer">
+        <section class="box-container">
+            <div class="box">
+                <img src="/public/images/email-icon.png" alt="">
+                <h3>our email</h3>
+                <a href="mailto:shaikhanas@gmail.com">shaikhanas@gmail.com</a>
+                <a href="mailto:anasbhai@gmail.com">anasbhai@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <img src="/public/images/clock-icon.png" alt="">
+                <h3>opening hours</h3>
+                <p>07:00 AM - 10:00 PM</p>
+            </div>
+
+            <div class="box">
+                <img src="/public/images/map-icon.png" alt="">
+                <h3>our address</h3>
+                <a href="https://www.google.com/maps">Mumbai, India - 400104</a>
+            </div>
+
+            <div class="box">
+                <img src="/public/images/phone-icon.png" alt="">
+                <h3>our number</h3>
+                <a href="tel:1234567890">+123-456-7890</a>
+                <a href="tel:1112223333">+111-222-3333</a>
+            </div>
+        </section>
+
+        <div class="credit">&copy; 2022 by <span>mr. web designer</span> | All rights reserved!</div>
+    </footer>
+
+    <div class="loader">
+        <img src="/public/images/loader.gif" alt="">
+    </div>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/khachhang/datbanan.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/public/css/style.css">
+
+</head>
+<body>
+   <header class="header">
+
+      <section class="flex">
+   
+         <a href="home.html" class="logo">yum-yum 😋</a>
+   
+         <nav class="navbar">
+            <a href="/view/menu_main/home.html">home</a>
+            <a href="/view/menu_main/about.html">about</a>
+            <a href=/view/menu_main/menu.html>menu</a>
+            <a href="/view/menu_main/orders.html">orders</a>
+            <a href="/view/menu_main/contact.html">contact</a>
+         </nav>
+   
+         <div class="icons">
+            <a href="/view/menu_button/search.html"><i class="fas fa-search"></i></a>
+            <a href="/view/menu_button/cart.html"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+         </div>
+   
+         <div class="profile">
+            <p class="name">shaikh anas</p>
+            <div class="flex">
+               <a href="/view/menu_button/profile.html" class="btn">profile</a>
+               <a href="#" class="delete-btn">logout</a>
+            </div>
+            <p class="account"><a href="/view/login.html">login</a> or <a href="/vieww/register.html">register</a></p>
+         </div>
+   
+      </section>
+   
+   </header>
+
+<section class="form-container">
+
+   <form action="" method="post">
+      <h3>Đặt bàn ngay</h3>
+      
+      <input type="text" required maxlength="20" name="name" placeholder="Người đặt bàn" class="box">
+      
+      <input type="email" required maxlength="50" name="email" placeholder="Nhập email" class="box">
+      
+      <input type="number" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" 
+      placeholder="Nhập số điện thoại" required class="box" name="number">
+     
+      
+      <input type="number" min="1" max="50" name="guests" placeholder="Số lượng khách (tối đa 50)" required class="box">
+      
+      <input type="number" min="1" max="30" name="arrival_time" placeholder="Sẽ tới trong bao nhiêu phút (tối đa 30 phút nữa)" required class="box">
+    
+      <input type="submit" value="Đặt bàn ngay" class="btn" name="submit">
+      
+      <p>Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></p>
+  </form>
+  
+
+   <!-- <form action="" method="post">
+      <h3>register now</h3>
+      <input type="text" required maxlength="20" name="name" placeholder="Người Đặt Bàn" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="email" required maxlength="50" name="email" placeholder="Nhập gmail" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="number" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" placeholder="Nhập số điện thoại" required class="box" name="number">
+      <input type="number" required maxlength="20" name="pass" placeholder="Số lượng khách" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="submit" value="regisetr now" class="btn" name="submit">
+      <p>already have an account? <a href="login.html">login now</a></p>
+   </form> -->
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   <section class="box-container">
+
+      <div class="box">
+         <img src="/public/images/email-icon.png" alt="">
+         <h3>our email</h3>
+         <a href="mailto:shaikhanas@gmail.com">shaikhanas@gmail.com</a>
+         <a href="mailto:anasbhai@gmail.com">anasbhai@gmail.com</a>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/clock-icon.png" alt="">
+         <h3>opening hours</h3>
+         <p>00:07am to 00:10pm </p>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/map-icon.png" alt="">
+         <h3>our address</h3>
+         <a href="https://www.google.com/maps">mumbai, india - 400104</a>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/phone-icon.png" alt="">
+         <h3>our number</h3>
+         <a href="tel:1234567890">+123-456-7890</a>
+         <a href="tel:1112223333">+111-222-3333</a>
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!</div>
+
+</footer>
+
+<div class="loader">
+   <img src="/public/images/loader.gif" alt="">
+</div>
+
+<script src="/public/js/script.js"></script>
+
+</body>
+</html>

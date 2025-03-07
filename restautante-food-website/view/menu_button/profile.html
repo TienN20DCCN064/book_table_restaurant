@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>my profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/public/css/style.css">
+
+</head>
+<body>
+   <div id='menu'>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+               .then(response => response.text()) // Lấy nội dung dưới dạng text
+               .then(data => {
+                  document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+               })
+               .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+         });
+      </script>
+
+   </div>
+
+
+<div class="heading">
+   <h3>my profile</h3>
+   <p><a href="/view/menu_main/home.html">home </a> <span> / profile</span></p>
+</div>
+
+<section class="user-details">
+
+   <div class="user">
+      <img src="/public/images/user-icon.png" alt="">
+      <p><i class="fas fa-user"></i> <span>Daniel Oliveira</span></p>
+      <p><i class="fas fa-phone"></i> <span>1234567890</span></p>
+      <p><i class="fas fa-envelope"></i> <span>danieloliveira.webmaster@gmail.com</span></p>
+      <a href="update_profile.html" class="btn">update profile</a>
+      <p class="address"><i class="fas fa-map-marker-alt"></i> <span>Rua angra dos reis, 404 Manaus, Amazonas, Brasil - 69090380</span></p>
+      <a href="update_address.html" class="btn">update address</a>
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   <section class="box-container">
+
+      <div class="box">
+         <img src="/public/images/email-icon.png" alt="">
+         <h3>our email</h3>
+         <a href="mailto:shaikhanas@gmail.com">danieloliveira.webmaster@gmail.com</a>
+         <a href="mailto:anasbhai@gmail.com">danieloliveira.webmaster@hotmail.com</a>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/clock-icon.png" alt="">
+         <h3>opening hours</h3>
+         <p>00:07am to 00:10pm </p>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/map-icon.png" alt="">
+         <h3>our address</h3>
+         <a href="https://www.google.com/maps">Manaus, Brasil - 69090380</a>
+      </div>
+
+      <div class="box">
+         <img src="/public/images/phone-icon.png" alt="">
+         <h3>our number</h3>
+         <a href="tel:1234567890">+123-456-7890</a>
+         <a href="tel:1112223333">+111-222-3333</a>
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; copyright @ 2022 by <span>Daniel Oliveira</span> | all rights reserved!</div>
+
+</footer>
+
+<div class="loader">
+   <img src="/public/images/loader.gif" alt="">
+</div>
+
+<script src="/public/js/script.js"></script>
+
+</body>
+</html>
