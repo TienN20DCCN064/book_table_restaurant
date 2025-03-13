@@ -1,0 +1,63 @@
+<footer class="footer">
+    <section class="box-container">
+        <div class="box">
+            <img src="/public/images/email-icon.png" alt="">
+            <h3>Email Hỗ Trợ</h3>
+            <a id="email1" href="mailto:vantien1111@gmail.com">vantien1111@gmail.com</a>
+            <a id="email2" href="mailto:vantien1111222@hotmail.com">vantien1111222@hotmail.com</a>
+        </div>
+
+        <div class="box">
+            <img src="/public/images/clock-icon.png" alt="">
+            <h3>Giờ Phục Vụ</h3>
+            <p id="service-hours">24/24</p>
+        </div>
+
+        <div class="box">
+            <img src="/public/images/map-icon.png" alt="">
+            <h3>Địa Chỉ Hỗ Trợ</h3>
+            <a id="address" href="https://www.google.com/maps">Manaus, Brasil - 69090380</a>
+        </div>
+
+        <div class="box">
+            <img src="/public/images/phone-icon.png" alt="">
+            <h3>Số Điện Thoại Hỗ Trợ</h3>
+            <a id="phone1" href="tel:1234567890">+123-456-7890</a>
+            <a id="phone2" href="tel:1112223333">+111-222-3333</a>
+        </div>
+    </section>
+
+    <div class="credit" id="copyright">&copy; copyright @ 2024 by <span>Daniel Oliveira</span> | all rights reserved!</div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const footerData = {
+            email: ["support@example.com", "contact@example.com"],
+            serviceHours: "8:00 - 22:00",
+            address: {
+                text: "Hà Nội, Việt Nam - 100000",
+                link: "https://www.google.com/maps?q=Hanoi,Vietnam"
+            },
+            phoneNumbers: ["+84-123-456-789", "+84-987-654-321"],
+            copyright: "© 2024 by PTIT Team | All rights reserved!"
+        };
+
+        document.getElementById("email1").textContent = footerData.email[0];
+        document.getElementById("email1").href = `mailto:${footerData.email[0]}`;
+        document.getElementById("email2").textContent = footerData.email[1];
+        document.getElementById("email2").href = `mailto:${footerData.email[1]}`;
+
+        document.getElementById("service-hours").textContent = footerData.serviceHours;
+
+        document.getElementById("address").textContent = footerData.address.text;
+        document.getElementById("address").href = footerData.address.link;
+
+        document.getElementById("phone1").textContent = footerData.phoneNumbers[0];
+        document.getElementById("phone1").href = `tel:${footerData.phoneNumbers[0]}`;
+        document.getElementById("phone2").textContent = footerData.phoneNumbers[1];
+        document.getElementById("phone2").href = `tel:${footerData.phoneNumbers[1]}`;
+
+        document.getElementById("copyright").innerHTML = footerData.copyright;
+    });
+</script>

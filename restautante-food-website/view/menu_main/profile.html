@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>my profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="/public/css/style.css">
+
+</head>
+
+<body>
+   <div id='menu'>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+               .then(response => response.text()) // Lấy nội dung dưới dạng text
+               .then(data => {
+                  document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+               })
+               .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+         });
+      </script>
+
+   </div>
+
+
+   <div class="heading" style="margin-top: 100px;">
+      <h3>my profile</h3>
+      <p><a href="/view/menu_main/home.html">home </a> <span> / profile</span></p>
+   </div>
+
+   <section class="user-details">
+
+      <div id="thong_tin_nguoi_dung" class="user">
+         <img src="/public/images/user-icon.png" alt="">
+         <p><i class="fas fa-user"></i> <span>Daniel Oliveira</span></p>
+         <p><i class="fas fa-phone"></i> <span>1234567890</span></p>
+         <p><i class="fas fa-envelope"></i> <span>danieloliveira.webmaster@gmail.com</span></p>
+         <!-- <a href="update_profile.html" class="btn">update profile</a> -->
+         <button id="cap_nhat_thong_tin" class="btn">
+            update profile
+        </button>
+      </div>
+
+   </section>
+
+   <div id="footer-placeholder">
+      <script>
+         fetch('/view/common/khachhang/header/thongtin_trungtam.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+      </script>
+   </div>
+
+   <div class="loader">
+      <img src="/public/images/loader.gif" alt="">
+   </div>
+
+   <script src="/public/js/script.js"></script>
+   <script type="module" src="/public/js/global/global.js"></script>
+   <script type="module" src="/public/js/global/hamChung.js"></script>
+   <script src="/public/js/menu_main/profile.js"></script> <!-- Link tới file JavaScript -->
+
+</body>
+
+</html>

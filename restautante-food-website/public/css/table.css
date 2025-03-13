@@ -1,12 +1,13 @@
 .table-list {
     width: 100%;
-    max-width: 80%;
+    max-width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
+    font-size: 20px; /* Tăng kích thước chữ chung */
 }
 
 .table-list th, 

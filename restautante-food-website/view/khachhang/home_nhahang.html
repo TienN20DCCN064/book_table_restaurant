@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="/public/css/style_cu.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <!-- <link rel="stylesheet" href="res.css"> -->
+    <link href="http://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+<body style="margin-top: 70px;">
+
+    <section class="top" id='menu'>
+        <div class="container">
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+                        .then(response => response.text()) // Lấy nội dung dưới dạng text
+                        .then(data => {
+                            document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+                        })
+                        .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+                });
+            </script>
+        </div>
+    </section>
+
+    <section class="home">
+        <div id="menu_nhho" class="swiper home-slider">
+        </div>
+    </section>
+
+
+    <section class="about section-pading" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 data-title="Câu chuyện" id="ten"> </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="about-item" data-aos-duration="1500">
+                    <h2 id="mo_ta"></h2>
+                    <p id="noidung"></p>
+                    <button id="dat_ban" class="btn">
+                        ĐẶT BÀN ĂN
+                    </button>
+                </div>
+                <div class="about-item" style="padding-left: 900px; margin-top: -400px;">
+                    <div class="about-item-img">
+                        <span style="color: black;">Hon 10 nam kinh nghiem</span>
+                        <img src="/public/images/cat-3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu section-pading" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 data-title="Dat ngay">Thuc don</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="menu-title">
+                    <button class="menu-button active" data-title="#trua">Trưa </button>
+                    <button class="menu-button" data-title="#chieu">Chiều </button>
+                    <button class="menu-button" data-title="#do-uong">Đồ Uống </button>
+                    <button class="menu-button" data-title="#diem-tam">Điểm Tâm</button>
+                </div>
+            </div>
+            <div class="row justify-content">
+                <div class="menu-item-content active" id="trua">
+
+                </div>
+                <div class="menu-item-content" id="chieu">
+
+                </div>
+                <div class="menu-item-content" id="do-uong">
+
+                </div>
+                <div class="menu-item-content" id="diem-tam">
+
+
+
+
+                </div>
+            </div>
+    </section>
+
+    <section class="phan-hoi section-pading">
+
+
+    </section>
+
+
+
+
+    <section class="team" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 data-title="Cong su">Dau bep</h2>
+                </div>
+            </div>
+            <div id="list_daubep" class="row">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+
+        <div class="footer-bg">
+
+        </div>
+        <div class="container">
+            <div class="row justify-content">
+                <div class="footer-item">
+                    <h2>Địa Chỉ Nhà Hàng</h2>
+                    <p id="dia_chi" style="font-size: 20px;"></p>
+                </div>
+                <div class="footer-item">
+                    <h2>Giờ Mở Cửa</h2>
+                    <p style="font-size: 20px;">9h -23h<br>all day</p>
+                </div>
+                <div class="footer-item">
+                    <h2>Liên Hệ</h2>
+                    <p style="font-size: 20px;" id="sdt">Phone : 0000000</p>
+                    <div class="footer-social">
+                        <i class="fab fa-facebook"> </i>
+                        <i class="fab fa-instagram"> </i>
+                        <i class="fab fa-twitter"> </i>
+                        <i class="fab fa-youtube"> </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-copyright">
+                toan bo ban quyen thuoc thai
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="/public/js/global/global.js"></script>
+    <script type="module" src="/public/js/global/hamChung.js"></script>
+
+    <!-- Thêm mã JavaScript vào cuối file -->
+    <script src="/public/js/khachhang/home_nhahang.js"></script> <!-- Link tới file JavaScript -->
+
+    <script>
+        AOS.init();
+
+    </script>
+
+</body>
+
+</html>

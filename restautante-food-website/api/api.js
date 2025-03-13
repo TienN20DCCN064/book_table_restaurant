@@ -30,15 +30,18 @@ db.connect((err) => {
 
 // Danh sách bảng và khóa chính tương ứng
 const tables = {
+     "trung_tam":["id"],
+     "ban_an": ["id"],
+     "chi_tiet_don_hang": ["id"],
+     "danh_gia":["id"],
+     "don_hang": ["id"],
+    "dat_ban": ["id"],
+    "dau_bep":["id"],
     "thuc_don": ["id"],
     "nha_hang": ["id"],
     "nguoi_dung": ["id"],
     "loai_nha_hang": ["id"],
-    "don_hang": ["id"],
-    "dat_ban": ["id"],
-    "chi_tiet_don_hang": ["id"],
-    "ban_an": ["id"],
-    "dau_bep":["id"],
+    
     // "nhan_vien": ["id"],
     // "phan_quyen": ["id"],
     // "tai_khoan_quyen": ["id"]

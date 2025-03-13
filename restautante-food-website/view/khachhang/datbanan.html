@@ -17,38 +17,25 @@
 
 <body>
 
-    <header class="header">
-        <section class="flex">
-            <a href="home.html" class="logo">yum-yum 😋</a>
-            <nav class="navbar">
-                <a href="/view/menu_main/home.html">home</a>
-                <a href="/view/menu_main/about.html">about</a>
-                <a href="/view/menu_main/menu.html">menu</a>
-                <a href="/view/menu_main/orders.html">orders</a>
-                <a href="/view/menu_main/contact.html">contact</a>
-            </nav>
 
-            <div class="icons">
-                <a href="/view/menu_button/search.html"><i class="fas fa-search"></i></a>
-                <a href="/view/menu_button/cart.html"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
-                <div id="user-btn" class="fas fa-user"></div>
-                <div id="menu-btn" class="fas fa-bars"></div>
-            </div>
+    <section class="top" id='menu'>
+        <div class="container">
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+                        .then(response => response.text()) // Lấy nội dung dưới dạng text
+                        .then(data => {
+                            document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+                        })
+                        .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+                });
+            </script>
+        </div>
+    </section>
 
-            <div class="profile">
-                <p class="name">shaikh anas</p>
-                <div class="flex">
-                    <a href="/view/menu_button/profile.html" class="btn">profile</a>
-                    <a href="#" class="delete-btn">logout</a>
-                </div>
-                <p class="account"><a href="/view/login.html">login</a> or <a href="/view/register.html">register</a>
-                </p>
-            </div>
-        </section>
-    </header>
-
-    <section >
-        <table class="table-list">
+    <section style="margin-top: 100px;">
+        <h2>Danh sách bàn của nhà hàng XYZ</h2>
+        <table id="table_banan" class="table-list">
             <thead>
                 <tr>
                     <th>Bàn</th>
@@ -59,44 +46,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>01</td>
-                    <td>2</td>
-                    <td class="available">✅ Còn trống</td>
-                    <td>-</td>
-                    <td><input type="checkbox" name="selected_tables[]" value="1"></td>
-                </tr>
-                <tr>
-                    <td>02</td>
-                    <td>4</td>
-                    <td class="booked">❌ Đã đặt</td>
-                    <td class="booked-time" data-booked-time="10">10 phút trước</td>
-                    <td>❌</td>
-                </tr>
-                <tr>
-                    <td>03</td>
-                    <td>6</td>
-                    <td class="available">✅ Còn trống</td>
-                    <td>-</td>
-                    <td><input type="checkbox" name="selected_tables[]" value="3"></td>
-                </tr>
-                <tr>
-                    <td>04</td>
-                    <td>8</td>
-                    <td class="available">✅ Còn trống</td>
-                    <td>-</td>
-                    <td><input type="checkbox" name="selected_tables[]" value="4"></td>
-                </tr>
+                <!-- Dữ liệu bàn sẽ được thêm vào đây bằng JavaScript -->
             </tbody>
         </table>
         <div style="text-align: center; margin-top: 20px;">
-            <a href="selected-tables.html" class="btn" id="view-selected-tables">Xem bàn đã chọn</a>
+            <button class="btn" id="view-selected-tables">Xem bàn đã chọn</button>
         </div>
-        
-        
     </section>
-    
-    
+
+
+
+
 
     <footer class="footer">
         <section class="box-container">
@@ -136,6 +96,8 @@
 
     <script src="/public/js/script.js"></script>
     <script src="/public/js/khachhang/datbanan.js"></script>
+    <script type="module" src="/public/js/global/global.js"></script>
+    <script type="module" src="/public/js/global/hamChung.js"></script>
 
 </body>
 

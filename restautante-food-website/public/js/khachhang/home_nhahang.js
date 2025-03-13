@@ -6,42 +6,19 @@ const mo_ta = document.getElementById("mo_ta");
 const noidung = document.getElementById("noidung");
 const dia_chi = document.getElementById("dia_chi");
 const sdt = document.getElementById("sdt");
-document.addEventListener("DOMContentLoaded", function () {
-    let restaurantId = sessionStorage.getItem("restaurantId");
-    // console.log("Nhà hàng được chọn có ID:", restaurantId);
+let btnDatBan = document.getElementById("dat_ban");
 
-    // restaurantId = "NH002";
-    // console.log("Nhà hàng được chọn có ID:", restaurantId);
-    // // Hiển thị trên trang hoặc dùng để tiếp tục logic đặt bàn
-    // //    document.getElementById("selected-restaurant").textContent = `Nhà hàng ID: ${restaurantId}`;
-    showView_nhaHang(restaurantId);
+const params = new URLSearchParams(window.location.search);
+const id_nhaHang = params.get("id_nhaHang");
+
+document.addEventListener("DOMContentLoaded", function () {
+    // let restaurantId = sessionStorage.getItem("restaurantId");
+    console.log("restaurantId " + id_nhaHang);
+    showView_main(id_nhaHang);
 
 });
 
 
-// menuBar.addEventListener("click", function () {
-//     // thêm hoặc xóa class active, nếu chưa thì xóa
-//     // lấy từ menuBar
-//     menuBar.classList.toggle("active")
-//     // lấy phần tử đầu tiên  của DOM menu-items 
-//     // sau đó thêm hoặc xóa class active - có thì xóa - chưa thì thêm
-//     document.querySelector(".menu-items").classList.toggle("active")
-
-
-// })
-// const toP = document.querySelector(".top")
-// // lắng nghe sự kiện cuộn trang wweb
-// window.addEventListener("scroll", function () {
-//     const x = this.pageYOffset;
-//     if (x > 80) {
-//         toP.classList.add("active")
-//     }
-//     else {
-//         toP.classList.remove("active")
-//     }
-// })
-
-// js cho menu  
 
 const menuTitle = document.querySelector(".menu-title");
 menuTitle.addEventListener("click", function (x) {
@@ -55,11 +32,12 @@ menuTitle.addEventListener("click", function (x) {
         menuItem.querySelector(Target).classList.add("active")
     }
 })
-async function showView_nhaHang(id) {
-   // console.log("id = " + id);
+
+async function showView_main(id) {
+    // console.log("id = " + id);
     //  console.log(hamChung.layThongTin_1nhaHang(id));
-    const restaurant = await hamChung.layThongTin_1nhaHang(id);
-    //console.log(restaurant);
+    const restaurant = await hamChung.layThongTinTheo_ID("nha_hang", id);
+    console.log(restaurant);
     mo_ta.innerHTML = restaurant.mo_ta;
     noidung.innerHTML = restaurant.noidung;
     dia_chi.innerHTML = restaurant.dia_chi;
@@ -69,9 +47,10 @@ async function showView_nhaHang(id) {
     // Gọi hàm để hiển thị menu
     // showView_thucDon_nhaHang(id);  // Thay "NH001" bằng ID nhà hàng thực tế
     //   await hamChung.layDanhSachMonAn_loai("NH002","Trưa");
-    showView_anhDong(id,4);
+    showView_anhDong(id, 4);
     showView_thucDon_nhaHang(id);
     showView_dauBep_nhaHang(id);
+    showView_phanHoi(id);
     //  console.log(data);
 }
 
@@ -80,13 +59,13 @@ async function showView_thucDon_nhaHang(id) {
         { loai: "Trưa", elementId: "trua" },
         { loai: "Chiều", elementId: "chieu" },
         { loai: "Đồ Uống", elementId: "do-uong" },
-        { loai: "Điểm Tâm", elementId: "diem-tam"}
+        { loai: "Điểm Tâm", elementId: "diem-tam" }
 
     ];
 
     for (const { loai, elementId } of loaiMonAn) {
         const data = await hamChung.layDanhSachMonAn_loai(id, loai);
-       // console.log(data);
+        // console.log(data);
         const menuElement = document.getElementById(elementId);
 
         if (!menuElement) {
@@ -157,22 +136,16 @@ async function showView_dauBep_nhaHang(id) {
 }
 // Gọi hàm renderMenu với id bất kỳ
 
- 
-async function showView_anhDong(nha_hang_id,soLuong) {
+
+async function showView_anhDong(nha_hang_id, soLuong) {
     const data = await hamChung.layDanhSachMenu_theoNhaHang(nha_hang_id);
-    console.log(data);
+    // console.log(data);
     const menuContainer = document.getElementById("menu_nhho");
 
     if (!data || data.length === 0) {
         menuContainer.innerHTML = "<p>Không có dữ liệu menu.</p>";
         return;
     }
-
-
-
-    // <a href="menu.html" class="btn">See Menus</a>
-    
-    
     // Lấy tối đa 4 món
     const limitedData = data.slice(0, soLuong);
 
@@ -205,8 +178,8 @@ async function showView_anhDong(nha_hang_id,soLuong) {
             clickable: true,
         },
     });
-     // Gán sự kiện cuộn xuống menu khi nhấn nút "See Menus"
-     document.querySelectorAll(".scroll-to-menu").forEach(button => {
+    // Gán sự kiện cuộn xuống menu khi nhấn nút "See Menus"
+    document.querySelectorAll(".scroll-to-menu").forEach(button => {
         button.addEventListener("click", () => {
             document.querySelector(".menu.section-pading").scrollIntoView({
                 behavior: "smooth"
@@ -216,5 +189,58 @@ async function showView_anhDong(nha_hang_id,soLuong) {
 
 }
 
+async function showView_phanHoi(nha_hang_id, soLuong) {
 
 
+    const feedbackSection = document.querySelector(".phan-hoi.section-pading");
+    if (!feedbackSection) return;
+    let data = await hamChung.layDanhSach("danh_gia");
+    let filteredData = data.filter(item => item.nha_hang_id === nha_hang_id).slice(0, soLuong);
+
+
+    feedbackSection.innerHTML = `
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2 data-title="y kien">Phan hoi</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="phan-hoi-items">
+                        ${Array(3).fill(`
+                            <div class="phan-hoi-item">
+                                <div class="phan-hoi-item-content">
+                                    <div class="phan-hoi-item-img-content-text">
+                                        <h2>Ngo sy nguyen</h2>
+                                        <span>food Specialist</span>
+                                    </div>
+                                    <div class="phan-hoi-item-img-content-img">
+                                        <img src="/public/images/cat-1.png" alt="">
+                                    </div>
+                                </div>
+                                <p>Hành khách đi tàu tăng kỷ lục
+                                    Năm 2024, Tổng công ty Đường sắt Việt Nam (VNR) đón hơn 7 triệu lượt hành khách, tăng gần
+                                </p>
+                                <div class="phan-hoi-item-star">
+                                    ${Array(5).fill('<i class="fas fa-star"></i>').join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+
+}
+
+btnDatBan.addEventListener("click", function () {
+    // window.location.href = "/view/khachhang/datbanan.html";
+    // console.log(id_nhaHang);
+    // nếu vào nhà hàng khác thì
+    // if(DanhSach.getNhaHangDangChon()!=id_nhaHang){
+    //     DanhSach.resetNhaHangDangChon();
+    // }
+    
+    window.location.href = `/view/khachhang/datbanan.html?id_nhaHang=${id_nhaHang}`;
+});

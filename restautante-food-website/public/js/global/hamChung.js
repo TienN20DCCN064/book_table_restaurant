@@ -2,14 +2,14 @@ const hamChung = {
     // Đặt giá trị vào localStorage
 
 
+    // Tự động tạo các hàm lấy danh sách từ `tables`
+
+
     async layDSNhaHang_theoLoai(loai) {
         return await layDanhSachSP_theoLoai(loai); // Đảm bảo trả về kết quả từ Promise
     },
-    async layDSNhaHang() {
-        return await layDSNhaHang(); // Đảm bảo trả về kết quả từ Promise
-    },
-    
-    
+
+
     async layDanhSachDB_theoNhaHang(id) {
         return await layDanhSachDB_theoNhaHang(id); // Đảm bảo trả về kết quả từ Promise
     },
@@ -17,24 +17,61 @@ const hamChung = {
         return await layDanhSachMenu_theoNhaHang(id); // Đảm bảo trả về kết quả từ Promise
     },
 
-    async layThongTin_1nhaHang(id) {
-        return await layThongTin_1nhaHang(id); // Đảm bảo trả về kết quả từ Promise
-    },
-
     async layDanhSachMonAn_loai(idNhaHang, loai) {
         return await layDanhSachMonAnNhaHang_loai(idNhaHang, loai); // Đảm bảo trả về kết quả từ Promise
     },
+
+    async layDanhSachBanAn_theoNhaHang(id_nhaHang) {
+        return await layDanhSachBanAn_theoNhaHang(id_nhaHang); // Đảm bảo trả về kết quả từ Promise
+    },
+
+
+    async layDanhSach(table) {
+        return await layDanhSach(table);
+    },
+    async layThongTinTheo_ID(table, id) {
+        return await layThongTinTheo_ID(table, id);
+    }
+
+
+
+
+
 };
-async function layDSNhaHang() {
+
+async function layDanhSach(table) {
     try {
-        const response = await fetch(GlobalStore.getLinkCongAPI() + "nha_hang");
-        const products = await response.json(); // Chuyển dữ liệu về JSON
-        return products;
+        const response = await fetch(GlobalStore.getLinkCongAPI() + table);
+        return await response.json();
     } catch (error) {
-        console.error("Lỗi khi lấy danh sách sản phẩm:", error);
+        console.error(`Lỗi khi lấy danh sách ${table}:`, error);
         return [];
     }
 }
+
+
+async function layThongTinTheo_ID(table, id) {
+    const response = await fetch(GlobalStore.getLinkCongAPI() + table + "/" + id);
+    return await response.json();
+    try {
+        const response = await fetch(GlobalStore.getLinkCongAPI() + table + "/" + id);
+        return await response.json();
+    } catch (error) {
+        console.error(`Lỗi khi lấy danh sách ${table}:`, error);
+        return [];
+    }
+}
+// Hàm lấy chi tiết theo ID
+async function layThongTinTheoID(table, id) {
+    try {
+        const response = await fetch(GlobalStore.getLinkCongAPI() + `${table}/${id}`);
+        return await response.json();
+    } catch (error) {
+        console.error(`Lỗi khi lấy thông tin ${table} với ID ${id}:`, error);
+        return null;
+    }
+}
+
 
 async function layDanhSachDB_theoNhaHang(id) {
     try {
@@ -64,13 +101,18 @@ async function layDanhSachSP_theoLoai(loai) {
         return [];
     }
 }
-async function layThongTin_1nhaHang(id) {
+async function layDanhSachBanAn_theoNhaHang(id_nhaHang) {
     try {
-        const response = await fetch(GlobalStore.getLinkCongAPI() + "nha_hang/" + id);
-        const data = await response.json(); // Chuyển dữ liệu về JSON
-        return data;
+        const response = await fetch(GlobalStore.getLinkCongAPI() + "ban_an");
+        const products = await response.json(); // Chuyển dữ liệu về JSON
+
+        // Lọc danh sách sản phẩm theo mã loại
+        const filteredProducts = products.filter(product => product.nha_hang_id === id_nhaHang);
+        // console.log("Loai sp là : " + loai);
+        // console.log(filteredProducts);
+        return filteredProducts;
     } catch (error) {
-        console.error("Lỗi khi lấy danh sách sản phẩm:", error);
+        console.error("Lỗi khi lấy danh sách bàn ăn theo của nhà hàng:", error);
         return [];
     }
 }
@@ -111,7 +153,7 @@ async function layDanhSachMenu_theoNhaHang(id) {
         // Lọc danh sách sản phẩm theo mã loại
         const filteredProducts = products.filter(product => product.nha_hang_id === id);
         // console.log("Loai sp là : " + loai);
-        console.log(filteredProducts);
+        // console.log(filteredProducts);
         return filteredProducts;
     } catch (error) {
         console.error("Lỗi khi lấy danh sách sản phẩm:", error);

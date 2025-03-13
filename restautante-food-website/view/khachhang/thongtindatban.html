@@ -34,7 +34,11 @@
 
     <div class="heading">
         <h3>checkout</h3>
-        <p><a href="home.html">home </a> <span> / checkout</span></p>
+        <p>
+            <a href="home.html">home </a>
+
+            <span> / checkout</span>
+        </p>
     </div>
 
     <section class="checkout">
@@ -43,48 +47,44 @@
 
         <form action="" method="post">
             <div class="cart-items">
-                <h3>Xác Nhận Đơn Đặt Chỗ</h3>
+                <h3 style="text-align: center;">Xác Nhận Đơn Đặt Chỗ</h3>
                 <p>
-                    <span class="name">Số bàn : 0101</span>
-                    <span class="name">Sức chứa: 33</span>
-                    <span class="price">$30</span>
-
+                    <span class="name">SỐ BÀN</span>
+                    <span class="name">SỨC CHỨA</span>
                 </p>
-                <p>
-                    <span class="name">Số bàn : 0101</span>
-                    <span class="name">Sức chứa: 33</span>
-                    <span class="price">$30</span>
+                <div id="table_danDatCoc">
 
-                </p>
-                <p>
-                    <span class="name">Số bàn : 0101</span>
-                    <span class="name">Sức chứa: 33</span>
-                    <span class="price">$30</span>
-
-                </p>
-                <div class="payment-summary">
-                    <p>
-                        <span class="name">Grand Total:</span>
-                        <span class="price">$90</span>
-                       
-                    </p>
-                    <p class="grand-total">
-                        <span class="name">Deposit (Tiền đặt cọc):</span>
-                        <span class="price">$10</span>
-                    </p>
                 </div>
 
-                
-                <a href="cart.html" class="btn">view cart</a>
+
+                <!-- 
+                <a href="cart.html" class="btn">view cart</a> -->
+                <div style="text-align: center;">
+                    <button id="dat_lai_ban" class="btn">
+                        ĐẶT BÀN LẠI
+                    </button>
+                </div>
+
             </div>
             <div class="user-info">
                 <h3>your info</h3>
-                <p><i class="fas fa-user"></i> <span>Lê Văn Tiên</span></p>
-                <p><i class="fas fa-phone"></i> <span>1234567890</span></p>
-                <p><i class="fas fa-envelope"></i> <span>danieloliveira.webmaster@gmail.com</span></p>
-                <a href="update_profile.html" class="btn">update info</a>
+                <p>
+                    <i class="fas fa-user">
+                    </i>
+                    <span id="ho_ten">AAAAAAAAAA</span>
+                </p>
+                <p><i class="fas fa-phone"></i> <span id="sdt">000000000</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="gmail">danieloliveira.webmaster@gmail.com</span></p>
+                <!-- <a href="update_profile.html" class="btn">update info</a> -->
+                <div style="text-align: center;">
+                    <button id="cap_nhat_thongTin" class="btn">
+                        Cập nhật thông tin
+                    </button>
+                </div>
+
                 <h3>Restaurant address</h3>
-                <p class="address"><i class="fas fa-map-marker-alt"></i> <span>Rua angra dos reis, 404 Manaus, Amazonas,
+                <p id="address_nha_hang" class="address"><i class="fas fa-map-marker-alt"></i> <span>Rua angra dos reis,
+                        404 Manaus, Amazonas,
                         Brasil - 69090380</span></p>
                 <!-- <a href="update_address.html" class="btn">update address</a> -->
                 <select name="method" class="box" required>
@@ -96,10 +96,16 @@
                     <option value="credit-card">💳 Thẻ tín dụng/Ghi nợ</option>
                     <option value="paypal">🅿️ PayPal</option>
                 </select>
-                
-                
+
+
             </div>
-            <input type="submit" value="Thanh Toan" name="order" class="btn order-btn">
+            <!-- <input type="submit" value="Thanh Toan" name="order" class="btn order-btn"> -->
+            <div style="text-align: center;">
+                <button id="cap_nhat_thongTin" class="btn" style="background-color: brown;">
+                    Thanh Toán
+                </button>
+            </div>
+
         </form>
 
     </section>
@@ -168,6 +174,13 @@
     </div>
 
     <script src="/public/js/script.js"></script>
+
+    <script type="module" src="/public/js/global/global.js"></script>
+    <script type="module" src="/public/js/global/hamChung.js"></script>
+
+    <!-- Thêm mã JavaScript vào cuối file -->
+    <script src="/public/js/khachhang/thongtindatban.js"></script> <!-- Link tới file JavaScript -->
+
 
 </body>
 

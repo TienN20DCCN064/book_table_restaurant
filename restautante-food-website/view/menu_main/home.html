@@ -34,45 +34,15 @@
       <h3>our menu</h3>
       <p><a href="/view/menu_main/home.html">home </a> <span> / menu</span></p>
    </div>
+
+
    <section class="home">
-      <div class="swiper home-slider">
-         <div class="swiper-wrapper">
-            <div class="swiper-slide slide">
-               <div class="content">
-                  <span>order online</span>
-                  <h3>delicious pizza</h3>
-                  <a href="menu.html" class="btn">see menus</a>
-               </div>
-               <div class="image">
-                  <img src="/public/images/home-img-1.png" alt="">
-               </div>
-            </div>
-
-            <div class="swiper-slide slide">
-               <div class="content">
-                  <span>order online</span>
-                  <h3>double hamburger</h3>
-                  <a href="menu.html" class="btn">see menus</a>
-               </div>
-               <div class="image">
-                  <img src="/public/images/home-img-2.png" alt="">
-               </div>
-            </div>
-
-            <div class="swiper-slide slide">
-               <div class="content">
-                  <span>order online</span>
-                  <h3>roasted chicken</h3>
-                  <a href="menu.html" class="btn">see menus</a>
-               </div>
-               <div class="image">
-                  <img src="/public/images/home-img-3.png" alt="">
-               </div>
-            </div>
-         </div>
-         <div class="swiper-pagination"></div>
+      <div id="menu_nhho" class="swiper home-slider">
       </div>
    </section>
+
+
+
 
    <section class="category">
       <h1 class="title">Loại Nhà Hàng</h1>
@@ -101,7 +71,7 @@
    </section>
 
    <section class="reviews">
-      <h1  id = 'nameLoaiNhaHang' class="title">Danh sách nhà hàng</h1>
+      <h1 id='nameLoaiNhaHang' class="title">Danh sách nhà hàng</h1>
       <div class="swiper reviews-slider">
          <div class="swiper-wrapper" id="restaurant-list">
             <!-- Dữ liệu sẽ được thêm vào đây từ API -->
@@ -110,44 +80,28 @@
       </div>
    </section>
 
+   <div id="footer-placeholder">
+      <script>
+         fetch('/view/common/khachhang/header/thongtin_trungtam.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+      </script>
+   </div>
+   <!-- 
 
+   <div id='menu'>
+      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            fetch("/view/common/khachhang/header/menu.html") // Đường dẫn tới file menu.html
+               .then(response => response.text()) // Lấy nội dung dưới dạng text
+               .then(data => {
+                  document.getElementById("menu").innerHTML = data; // Nhúng nội dung vào div #menu
+               })
+               .catch(error => console.error("Error loading menu:", error)); // Xử lý lỗi nếu có
+         });
+      </script>
 
-
-
-
-   <footer class="footer">
-      <section class="box-container">
-         <div class="box">
-            <img src="/public/images/email-icon.png" alt="">
-            <h3>Email Hỗ Trợ</h3>
-            <a href="mailto:shaikhanas@gmail.com">vantien1111@gmail.com</a>
-            <a href="mailto:anasbhai@gmail.com">vantien1111222@hotmail.com</a>
-         </div>
-
-         <div class="box">
-            <img src="/public/images/clock-icon.png" alt="">
-            <h3>Giờ Phục Vụ</h3>
-            <p>24/24 </p>
-         </div>
-
-         <div class="box">
-            <img src="/public/images/map-icon.png" alt="">
-            <h3>Địa Chỉ Hỗ Trợ</h3>
-            <a href="https://www.google.com/maps">Manaus, Brasil - 69090380</a>
-         </div>
-
-         <div class="box">
-            <img src="/public/images/phone-icon.png" alt="">
-            <h3>Số Điện Thoại Hỗ Trợ</h3>
-            <a href="tel:1234567890">+123-456-7890</a>
-            <a href="tel:1112223333">+111-222-3333</a>
-         </div>
-
-      </section>
-
-      <div class="credit">&copy; copyright @ 2024 by <span>Daniel Oliveira</span> | all rights reserved!</div>
-
-   </footer>
+   </div> -->
 
 
 
@@ -156,7 +110,7 @@
    </div>
 
    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  
+
    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
    <script src="/public/js/script.js"></script>
